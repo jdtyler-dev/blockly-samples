@@ -36,6 +36,33 @@
     });
   }
 
+  const toolbox = {
+    'kind': 'flyoutToolbox',
+    'contents': [
+      {
+        'kind': 'block',
+        'type': 'controls_repeat_ext',
+        'inputs': {
+          'TIMES': {
+            'shadow': {
+              'type': 'math_number',
+              'fields': {
+                'NUM': 5
+              }
+            }
+          }
+        }
+      }
+    ]
+  };
+
+  Blockly.inject('blocklyDiv', {
+    toolbox,
+    scrollbars: false,
+    horizontalLayout: true,
+    toolboxPosition: "end",
+  });
+
   function enableBlocklyMode(e) {
     document.body.setAttribute('mode', 'blockly');
     currentButton = e.target;
